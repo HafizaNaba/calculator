@@ -71,10 +71,14 @@ else if(this.innerHTML =="DEL"){
     input.value =str;
 }
 else if(this.innerHTML == "="){
-
-    input.value = eval(str);
+if(str == ""){
+    alert("please enter a number first");
+    input.value = "0";
+}
+    else{
+        input.value = eval(str);
     str = input.value;
-
+    }
 }
       else{
     str =str+ this.innerHTML;
