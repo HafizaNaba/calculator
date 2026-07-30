@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" placeholder="0" id="inputBox">
+        <div class="btn">
+            <button class="sign">AC</button>
+            <button class="sign">DEL</button>
+            <button class="sign">%</button>
+            <button class="sign">/</button>
+        </div>
+         <div class="btn">
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="sign">*</button>
+        </div>
+         <div class="btn">
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class="sign">-</button>
+        </div>
+         <div class="btn">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="sign">+</button>
+        </div>
+         <div class="btn">
+            <button>00</button>
+            <button>0</button>
+            <button>.</button>
+            <button class="equal">=</button>
+
+           
+        </div>
+    </div>
+
+
+
+
+
+
+<script>
+    
+let input = document.getElementById('inputBox');
+let btn = document.querySelectorAll('button');
+
+let str = "" ;
+
+
+
+for(var i =0; i<btn.length; i++){
+
+    btn[i].onclick = function(){
+
+        if(this.innerHTML == "AC"){
+    str = "";
+    input.value = "";
+}
+
+else if(this.innerHTML =="DEL"){
+    str = str.slice(0 , -1);
+    input.value =str;
+}
+else if(this.innerHTML == "="){
+
+    input.value = eval(str);
+    str = input.value;
+
+}
+      else{
+    str =str+ this.innerHTML;
+    input.value = str;
+} 
+     }
+
+
+    };
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
